@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.client.RestTemplate
 import ru.vcarstein.vkbot.service.MessageHandler
-import ru.vcarstein.vkbot.service.MessageType
+import ru.vcarstein.vkbot.message.MessageType
 
 @Configuration
 class BeanConfiguration {

@@ -1,4 +1,4 @@
-package ru.vcarstein.vkbot.service
+package ru.vcarstein.vkbot.message
 
 import ru.vcarstein.vkbot.exceptions.UnsupportedMessageType
 import java.util.*

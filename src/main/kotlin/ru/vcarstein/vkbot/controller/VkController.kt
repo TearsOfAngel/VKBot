@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 import ru.vcarstein.vkbot.data.VkMessage
 import ru.vcarstein.vkbot.exceptions.UnsupportedMessageType
 import ru.vcarstein.vkbot.service.MessageHandler
-import ru.vcarstein.vkbot.service.MessageType
+import ru.vcarstein.vkbot.message.MessageType
 
 
 @RequestMapping("/callback")

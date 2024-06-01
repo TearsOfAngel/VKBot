@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import ru.vcarstein.vkbot.data.VkMessage
 import ru.vcarstein.vkbot.service.MessageHandler
-import ru.vcarstein.vkbot.service.MessageType
+import ru.vcarstein.vkbot.message.MessageType
 
 @Component
 class ConfirmMessageHandler(
