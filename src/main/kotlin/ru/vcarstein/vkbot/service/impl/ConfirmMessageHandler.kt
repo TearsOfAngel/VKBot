@@ -17,6 +17,6 @@ class ConfirmMessageHandler(
     }
 
     override fun processMessage(message: VkMessage): String {
-        return "72aba490"
+        return confirmationString
     }
 }

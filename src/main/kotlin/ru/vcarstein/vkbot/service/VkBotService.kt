@@ -24,10 +24,11 @@ class VkBotService(
 
     fun sendMessage(peerId: Int, text: String) {
         val response = VkResponse(peerId, text)
+
         val uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
             .queryParam("peer_id", response.peerId)
             .queryParam("message", "Вы сказали: " + response.message)
-            .queryParam("random_id", (0..1000000).random())
+            .queryParam("random_id", response.randomId)
             .queryParam("access_token", apiToken)
             .queryParam("v", "5.236")
             .build()
