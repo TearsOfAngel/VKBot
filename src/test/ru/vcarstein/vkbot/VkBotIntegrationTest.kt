@@ -1,6 +1,7 @@
 package ru.vcarstein.vkbot
 
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,6 +17,7 @@ import org.springframework.http.MediaType
 import ru.vcarstein.vkbot.data.VkMessage
 import ru.vcarstein.vkbot.data.VkMessageObject
 import ru.vcarstein.vkbot.data.VkObject
+import ru.vcarstein.vkbot.service.VkBotService
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class VkBotIntegrationTest(
@@ -64,12 +66,12 @@ class VkBotIntegrationTest(
         val headers = HttpHeaders()
         headers.contentType = MediaType.APPLICATION_JSON
 
-        val confirmMessage = VkMessage(
+        val confirmMessageFromVk = VkMessage(
             type = "confirmation",
             groupId = 226103768
         )
 
-        val request = HttpEntity(confirmMessage, headers)
+        val request = HttpEntity(confirmMessageFromVk, headers)
         val response = restTemplate.exchange(url, HttpMethod.POST, request, String::class.java)
 
         assertEquals(HttpStatus.OK, response.statusCode)

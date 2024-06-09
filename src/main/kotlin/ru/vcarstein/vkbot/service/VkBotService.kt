@@ -22,12 +22,13 @@ class VkBotService(
         }
     }
 
-    fun sendMessage(peerId: Int, text: String) {
+    fun sendMessage(peerId: Int, text: String) : String {
         val response = VkResponse(peerId, text)
+        val echoResponseFromBot = "Вы сказали: " + response.message
 
         val uri = UriComponentsBuilder.fromHttpUrl(apiUrl)
             .queryParam("peer_id", response.peerId)
-            .queryParam("message", "Вы сказали: " + response.message)
+            .queryParam("message", echoResponseFromBot)
             .queryParam("random_id", response.randomId)
             .queryParam("access_token", apiToken)
             .queryParam("v", "5.236")
@@ -35,5 +36,6 @@ class VkBotService(
             .toUri()
 
         restTemplate.postForObject(uri, null, String::class.java)
+        return echoResponseFromBot
     }
 }
